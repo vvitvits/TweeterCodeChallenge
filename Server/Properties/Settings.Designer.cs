@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TweetController.Properties {
+namespace Server.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -20,6 +20,24 @@ namespace TweetController.Properties {
         public static Settings Default {
             get {
                 return defaultInstance;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("jLDjnzgtgfcb1aTBLQq0UC27G")]
+        public string twitterConsumerKey {
+            get {
+                return ((string)(this["twitterConsumerKey"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("5qNdIByGfdwozerGnBwsg75senNrNSn9EXJIa4QNGT0ngxGTlK")]
+        public string twitterConsumerSecret {
+            get {
+                return ((string)(this["twitterConsumerSecret"]));
             }
         }
     }

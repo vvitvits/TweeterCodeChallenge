@@ -16,12 +16,17 @@ namespace Server
     {
         public List<Tweet> GetTweets(string filter = null)
         {
-            return TweetController.Controller.GetTweets(filter);
+            var ConsumerKey = Properties.Settings.Default.twitterConsumerKey;
+            var ConsumerSecret = Properties.Settings.Default.twitterConsumerSecret;
+            using (var tweetController = new TweetController.Controller(ConsumerKey, ConsumerSecret))
+            {
+                return tweetController.GetTweets(10 ,filter);
+            }
         }
 
         public LoginResponse Login()
         {
-            return new LoginResponse() {Success = true };
+            return new LoginResponse() { Success = true };
         }
     }
 }
