@@ -15,6 +15,8 @@ namespace TweetController
         private string _consumerKey;
         private string _consumerSecret;
         private WebClient _webClient;
+        private const string AuthUrl = "https://api.twitter.com/oauth2/token";
+        private const string ApiUrl = "https://api.twitter.com/1.1/statuses/user_timeline.json";
 
         public Controller(string consumerKey, string consumerSecret)
         {
@@ -33,9 +35,9 @@ namespace TweetController
             var BearerTokenb64 = Convert.ToBase64String(Encoding.Default.GetBytes(BearerToken));
             _webClient.Headers.Add("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8");
             _webClient.Headers.Add("Authorization", "Basic " + BearerTokenb64);
-            var tokenPayload = _webClient.UploadString("https://api.twitter.com/oauth2/token", "grant_type=client_credentials");
+            var tokenPayload = _webClient.UploadString(AuthUrl, "grant_type=client_credentials");
             var rgx = new Regex("\"access_token\"\\s*:\\s*\"([^\"]*)\"");
-            // you can store this accessToken and just do the next bit if you want
+            // We could cache access tolken to avoid extra call
             return rgx.Match(tokenPayload).Groups[1].Value;
         }
 
@@ -51,13 +53,13 @@ namespace TweetController
             return null;
         }
 
-        public List<Tweet> GetTweets(int count, string filter = null)
+        public List<Tweet> GetTweets(string handle, int count, string filter = null)
         {
             var accessToken = GetAccessToken();
             _webClient.Headers.Clear();
             _webClient.Headers.Add("Authorization", "Bearer " + accessToken);
 
-            var TwitterApiUrl =$"https://api.twitter.com/1.1/statuses/user_timeline.json?tweet_mode=extended&screen_name=@salesforce&count={count}";
+            var TwitterApiUrl =$"{ApiUrl}?tweet_mode=extended&screen_name={handle}&count={count}";
 
 
             var json = _webClient.DownloadString(TwitterApiUrl);

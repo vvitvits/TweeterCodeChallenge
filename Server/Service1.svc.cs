@@ -20,7 +20,7 @@ namespace Server
             var ConsumerSecret = Properties.Settings.Default.twitterConsumerSecret;
             using (var tweetController = new TweetController.Controller(ConsumerKey, ConsumerSecret))
             {
-                return tweetController.GetTweets(10 ,filter);
+                return tweetController.GetTweets("@salesforce", 10 ,filter);
             }
         }
 
