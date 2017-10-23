@@ -8,28 +8,10 @@ angular.module('Authentication')
         var service = {};
 
         service.Login = function (username, password, callback) {
-
-            /* Dummy authentication for testing, uses $timeout to simulate api call
-             ----------------------------------------------*/
-            //$timeout(function(){
-            //    var response = { success: username === 'test' && password === 'test' };
-            //    if(!response.success) {
-            //        response.message = 'Username or password is incorrect';
-            //    }
-            //    callback(response);
-            //}, 1000);
-
-
-            /* Use this for real authentication
-             ----------------------------------------------*/
-            //var authdata = Base64.encode(username + ':' + password);
             service.SetCredentials(username, password);
-            //$http.get('http://codechallengevv.azurewebsites.net/Service1.svc/Login')
-            //    .success(function (response) {
-            //        callback(response);
-            //    });
 
-            $http.get('http://codechallengevv.azurewebsites.net/Service1.svc/Login')
+
+            $http.get('https://codechallengevv.azurewebsites.net/Service1.svc/Login')
                 .then(function (response) {
                     callback(response.data);
                  }, function errorCallback(response) {

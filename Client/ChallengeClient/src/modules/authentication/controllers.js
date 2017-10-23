@@ -14,10 +14,10 @@ angular.module('Authentication')
                 if (response.Success) {
                     AuthenticationService.SetCredentials($scope.username, $scope.password);
                     $location.path('/');
-                }else if (response === "") { 
+                }else { 
                     $scope.error = "Please provide valid user name and password.";
-                } else {
-                    $scope.error = response.ErrorMessage;
+                //} else {
+                //    $scope.error = response.ErrorMessage;
                 }
                     $scope.dataLoading = false;
             });

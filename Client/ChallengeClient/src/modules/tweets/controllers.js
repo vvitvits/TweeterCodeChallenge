@@ -16,7 +16,7 @@ angular.module('Tweeter')
             var loadTweets = function (filter) {
                 $scope.loading = true;
                 //load tweets
-                $http.get('http://codechallengevv.azurewebsites.net/Service1.svc/GetTweets?filter=' + ((filter == undefined) ? '' : filter))
+                $http.get('https://codechallengevv.azurewebsites.net/Service1.svc/GetTweets?filter=' + ((filter == undefined) ? '' : filter))
                     .then(function (response) {
                         $scope.tweets = response.data
                         $scope.loading = false;

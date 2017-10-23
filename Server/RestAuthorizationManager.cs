@@ -50,7 +50,7 @@ namespace Server
               //No authorization header was provided, so challenge the client to provide before proceeding:  
                 WebOperationContext.Current.OutgoingResponse.Headers.Add("WWW-Authenticate: Basic realm=\"MyWCFService\"");
                 //Throw an exception with the associated HTTP status code equivalent to HTTP status 401  
-                throw new WebFaultException(System.Net.HttpStatusCode.Unauthorized);
+                //throw new WebFaultException(System.Net.HttpStatusCode.Unauthorized);
         }
     }
 }
