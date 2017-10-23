@@ -1,0 +1,41 @@
+<div class="slds-box" style="max-width:350px;height:250px; margin:0 auto; background-color:#f9f9fa">
+    <form name="form" ng-submit="login()" role="form" class="slds-form slds-form_stacked">
+        <div class="slds-form-element">
+            <label for="username" class="slds-form-element__label">Username</label>
+            <!--<i class="fa fa-key"></i>-->
+            <span class="slds-icon_container slds-icon-utility-user" title="Provide user name">
+                <svg class="slds-icon slds-icon_x-small slds-icon-text-default" aria-hidden="true">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/scripts/assets/icons/utility-sprite/svg/symbols.svg#user" />
+                </svg>
+                <span class="slds-assistive-text">User name</span>
+            </span>
+            <div class="slds-form-element__control">
+                <input type="text" name="username" id="username" class="slds-input" ng-model="username" required />
+            </div>
+            <span ng-show="form.username.$dirty && form.username.$error.required" class=".slds-form-element__help">Username is required</span>
+        </div>
+        <div class="slds-form-element">
+            <label for="password" class="slds-form-element__label">Password</label>
+            <!--<i class="fa fa-lock"></i>-->
+            <span class="slds-icon_container slds-icon-utility-lock" title="Provide password">
+                <svg class="slds-icon slds-icon_x-small slds-icon-text-default" aria-hidden="true">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/scripts/assets/icons/utility-sprite/svg/symbols.svg#lock" />
+                </svg>
+                <span class="slds-assistive-text">Password</span>
+            </span>
+            <div class="slds-form-element__control">
+                <input type="password" name="password" id="password" class="slds-input" ng-model="password" required />
+            </div>
+            <span ng-show="form.password.$dirty && form.password.$error.required" class=".slds-form-element__help">Password is required</span>
+        </div>
+        <div class="slds-form-element">
+            <button type="submit" ng-disabled="form.$invalid || dataLoading" class="slds-button slds-button_brand">Login</button>
+            <img ng-if="dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+        </div>
+        <div ng-show="error" style="margin-top:10px;">
+            <div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error" role="alert">
+                <h2 class="slds-text-heading_small">{{error}}</h2>
+            </div>
+        </div>
+    </form>
+</div>
