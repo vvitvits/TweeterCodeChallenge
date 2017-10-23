@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "Server\Server.csproj", "{B78F4AE0-0A42-4DE1-AB33-202B462A447A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TweetController", "TweetController\TweetController.csproj", "{E19E4953-4C15-43A7-B571-4144241AB1D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChallengeClient", "..\Client\ChallengeClient\ChallengeClient.csproj", "{2574F603-4B6C-4A30-BFDD-E3BC09EEDFDF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B78F4AE0-0A42-4DE1-AB33-202B462A447A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B78F4AE0-0A42-4DE1-AB33-202B462A447A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B78F4AE0-0A42-4DE1-AB33-202B462A447A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B78F4AE0-0A42-4DE1-AB33-202B462A447A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E19E4953-4C15-43A7-B571-4144241AB1D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E19E4953-4C15-43A7-B571-4144241AB1D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E19E4953-4C15-43A7-B571-4144241AB1D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E19E4953-4C15-43A7-B571-4144241AB1D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2574F603-4B6C-4A30-BFDD-E3BC09EEDFDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2574F603-4B6C-4A30-BFDD-E3BC09EEDFDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2574F603-4B6C-4A30-BFDD-E3BC09EEDFDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2574F603-4B6C-4A30-BFDD-E3BC09EEDFDF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
