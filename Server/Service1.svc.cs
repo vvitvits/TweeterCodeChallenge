@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.ServiceModel;
-using System.ServiceModel.Web;
-using System.Text;
+﻿using System.Collections.Generic;
 using TweetController;
 
 namespace Server
@@ -18,9 +11,10 @@ namespace Server
         {
             var ConsumerKey = Properties.Settings.Default.twitterConsumerKey;
             var ConsumerSecret = Properties.Settings.Default.twitterConsumerSecret;
-            using (var tweetController = new TweetController.Controller(ConsumerKey, ConsumerSecret))
+            using (var webClient = new TweetController.WebClient())
             {
-                return tweetController.GetTweets("@salesforce", 10 ,filter);
+                var tweetController = new TweetController.Controller(ConsumerKey, ConsumerSecret, webClient);
+                return tweetController.GetTweets("@salesforce", 10, filter);
             }
         }
 

@@ -1,33 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using System.Net;
 using System.Web;
 using System.Text.RegularExpressions;
-using System.Globalization;
 
 namespace TweetController
 {
-    public class Controller : IDisposable
+    public class Controller 
     {
         private string _consumerKey;
         private string _consumerSecret;
-        private WebClient _webClient;
+        private IWebClient _webClient;
         private const string AuthUrl = "https://api.twitter.com/oauth2/token";
         private const string ApiUrl = "https://api.twitter.com/1.1/statuses/user_timeline.json";
 
-        public Controller(string consumerKey, string consumerSecret)
+        public Controller(string consumerKey, string consumerSecret, IWebClient webClient)
         {
             _consumerKey = consumerKey;
             _consumerSecret = consumerSecret;
-            _webClient = new WebClient();
-        }
-
-        public void Dispose()
-        {
-            _webClient?.Dispose();
+            _webClient = webClient;
         }
 
         private string GetAccessToken() {
